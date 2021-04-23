@@ -275,6 +275,14 @@
 #define QLJS_HAVE_SETJMP 0
 #endif
 
+#if !defined(QLJS_HAVE_ALIGNED_NEW)
+#if __cpp_aligned_new >= 201606L
+#define QLJS_HAVE_ALIGNED_NEW 1
+#else
+#define QLJS_HAVE_ALIGNED_NEW 0
+#endif
+#endif
+
 #endif
 
 // quick-lint-js finds bugs in JavaScript programs.
